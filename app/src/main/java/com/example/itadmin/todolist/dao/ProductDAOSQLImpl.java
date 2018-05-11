@@ -53,7 +53,7 @@ public class ProductDAOSQLImpl implements ProductDAO {
         try{
             open();
 
-            cursor = db.query(ProductDB.TABLE_PRODUCTS, new String[]{ProductDB.TABLE_PRODUCTS_ID, ProductDB.TABLE_PRODUCTS_NAME, ProductDB.TABLE_PRODUCTS_PRICE, ProductDB.TABLE_PRODUCTS_IMAGE}, null, null, null, null, null, null);
+            cursor = db.query(ProductDB.TABLE_PRODUCTS, new String[]{ProductDB.TABLE_PRODUCTS_ID, ProductDB.TABLE_PRODUCTS_NAME, ProductDB.TABLE_PRODUCTS_DESC, ProductDB.TABLE_PRODUCTS_PRICE, ProductDB.TABLE_PRODUCTS_IMAGE}, null, null, null, null, null, null);
 
             cursor.moveToFirst();
 
@@ -62,9 +62,9 @@ public class ProductDAOSQLImpl implements ProductDAO {
                     Product temp = new Product();
 
                     temp.setName(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_NAME)));
-                    temp.setName(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_DESC)));
-                    temp.setName(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_PRICE)));
-                    temp.setName(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_IMAGE)));
+                    temp.setDescription(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_DESC)));
+                    temp.setPrice(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_PRICE)));
+                    //temp.setProductImage(cursor.getString(cursor.getColumnIndex(ProductDB.TABLE_PRODUCTS_IMAGE)));
 
                     products.add(temp);
 
@@ -76,6 +76,6 @@ public class ProductDAOSQLImpl implements ProductDAO {
         }catch (Exception e){
 
         }
-        return null;
+        return products;
     }
 }

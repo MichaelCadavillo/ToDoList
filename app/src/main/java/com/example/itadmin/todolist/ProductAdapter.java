@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
     private Activity activity;
-    private ArrayList<Product> products;
+    private ArrayList<Product> products = new ArrayList<Product>() ;
     private static LayoutInflater inflater = null;
 
     public ProductAdapter (Activity activity, int textViewResourceId,ArrayList<Product> products) {

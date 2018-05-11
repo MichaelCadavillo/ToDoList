@@ -13,14 +13,14 @@ public class ProductDB extends SQLiteOpenHelper {
     public static final String TABLE_PRODUCTS_DESC = "desc";
     public static final String TABLE_PRODUCTS_PRICE = "price";
     public static final String TABLE_PRODUCTS_IMAGE = "image";
-    public static final String TABLE_PRODUCTS_QUANTITY = "quantity";
+    //public static final String TABLE_PRODUCTS_QUANTITY = "quantity";
 
     private static final String CREATE_PRODUCTS_TABLE = "create table " + TABLE_PRODUCTS + "(" + TABLE_PRODUCTS_ID + " integer primary key autoincrement, " +
-            TABLE_PRODUCTS_NAME + "text, " +
-            TABLE_PRODUCTS_DESC + "text, " +
-            TABLE_PRODUCTS_PRICE + "text, " +
-            TABLE_PRODUCTS_QUANTITY + "text, " +
-            TABLE_PRODUCTS_IMAGE + "text" +
+            TABLE_PRODUCTS_NAME + " text, " +
+            TABLE_PRODUCTS_DESC + " text, " +
+            TABLE_PRODUCTS_PRICE + " text, " +
+            /*TABLE_PRODUCTS_QUANTITY + " text, " +*/
+            TABLE_PRODUCTS_IMAGE + " text" +
             ");";
 
     public ProductDB(Context context){

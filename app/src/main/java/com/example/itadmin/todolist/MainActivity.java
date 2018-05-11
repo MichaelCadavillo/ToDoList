@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.itadmin.todolist.dao.ProductDAO;
 import com.example.itadmin.todolist.dao.ProductDAOSQLImpl;
@@ -25,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
-        /*ProductDAO db = new ProductDAOSQLImpl(getApplicationContext());
+        ProductDAO db = new ProductDAOSQLImpl(getApplicationContext());
+
+        Toast.makeText(this, "Output: " + db.getProducts().get(0).getDescription(), Toast.LENGTH_SHORT).show();
         ProductAdapter adapter = new ProductAdapter(MainActivity.this, 0, db.getProducts());
         listView.setAdapter(adapter);
 
         for(Product product: db.getProducts()){
             products.add(product);
-        }*/
+        }
 
     }
 
@@ -39,6 +42,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, addItemActivity.class);
         startActivity(intent);
     }
-
-
 }
