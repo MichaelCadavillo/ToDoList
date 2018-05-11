@@ -12,18 +12,20 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv"
-            android:layout_width="368dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="65dp">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/nameText"
@@ -39,25 +41,25 @@
                     android:id="@+id/descText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameText"
                     android:layout_marginStart="18dp"
-                    android:text="description"
-                    android:layout_below="@+id/nameText" />
+                    android:text="description" />
 
                 <TextView
                     android:id="@+id/priceText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/descText"
                     android:layout_marginStart="18dp"
-                    android:text="price"
-                    android:layout_below="@+id/descText" />
+                    android:text="price" />
 
                 <ImageView
                     android:id="@+id/productImageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginEnd="12dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_alignParentEnd="true" />
+                    android:src="@mipmap/ic_launcher" />
 
             </RelativeLayout>
 

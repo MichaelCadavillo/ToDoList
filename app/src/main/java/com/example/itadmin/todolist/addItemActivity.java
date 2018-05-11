@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.itadmin.todolist.dao.ProductDAO;
+import com.example.itadmin.todolist.dao.ProductDAOSQLImpl;
 import com.example.itadmin.todolist.model.Product;
 
 import java.util.ArrayList;
@@ -37,6 +39,9 @@ public class addItemActivity extends AppCompatActivity {
         ProductAdapter productAdapter = new ProductAdapter(addItemActivity.this, 0, products);
 
         MainActivity.listView.setAdapter(productAdapter);
+
+        ProductDAO db = new ProductDAOSQLImpl(getApplicationContext());
+        db.addProduct(product);
 
     }
 
